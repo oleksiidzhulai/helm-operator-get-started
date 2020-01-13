@@ -21,6 +21,8 @@ spec:
       annotations:
         prometheus.io/scrape: 'true'
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image }}"
